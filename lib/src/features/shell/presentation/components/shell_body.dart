@@ -9,17 +9,27 @@ class ShellBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.archive), label: 'Archives'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
-        currentIndex: navigationShell.currentIndex,
-        onTap: (index) {
-          navigationShell.goBranch(index, initialLocation: true);
-          // sl.get<NavCubit>().setIndex(index);
-        },
+      bottomNavigationBar: Container(
+        color: Colors.red,
+        width: 300,
+        child: BottomNavigationBar(
+
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.archive),
+              label: 'Archives',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          ],
+          currentIndex: navigationShell.currentIndex,
+          onTap: (index) {
+            navigationShell.goBranch(index, initialLocation: true);
+            // sl.get<NavCubit>().setIndex(index);
+          },
+        ),
       ),
     );
   }

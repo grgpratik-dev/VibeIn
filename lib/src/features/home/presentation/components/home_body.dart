@@ -13,27 +13,7 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          // backgroundColor: Colors.amberAccent,
-          title: const Text('VibeIn'),
-          actionsPadding: AppSpacing.screenPaddingHorizontal,
-          actions: [
-            Container(
-              clipBehavior: .hardEdge,
-              width: 52,
-              height: 52,
-
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(dummyImage),
-                  fit: BoxFit.cover,
-                ),
-                shape: BoxShape.circle,
-                border: Border.all(width: 2, color: AppColors.neutral500),
-              ),
-            ),
-          ],
-        ),
+        appBar: AppBar(title: const Text('VibeIn')),
         body: Padding(
           padding: AppSpacing.screenPaddingHorizontal,
           child: Column(
