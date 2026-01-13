@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vibein/src/app/route/app_routes.dart';
 import 'package:vibein/src/features/archives/presentation/archives_screen.dart';
+import 'package:vibein/src/features/profile/presentation/profile_screen.dart';
 import 'package:vibein/src/features/shell/presentation/shell_screen.dart';
 
 import '../../features/auth/presentation/auth_screen.dart';
@@ -42,6 +43,15 @@ final GoRouter appRouter = GoRouter(
               path: RoutePaths.archives,
               name: RouteNames.archives,
               builder: (context, state) => ArchivesScreen(),
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
+            GoRoute(
+              path: RoutePaths.profile,
+              name: RouteNames.profile,
+              builder: (context, state) => ProfileScreen(),
             ),
           ],
         ),

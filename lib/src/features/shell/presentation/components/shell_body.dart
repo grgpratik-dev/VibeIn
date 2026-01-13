@@ -7,26 +7,20 @@ class ShellBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NavCubit, int>(
-      builder: (context, state) {
-        return Scaffold(
-          body: state == 0 ? HomeScreen() : ArchivesScreen(),
-          bottomNavigationBar: BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.archive),
-                label: 'Archives',
-              ),
-            ],
-            currentIndex: navigationShell.currentIndex,
-            onTap: (index) {
-              navigationShell.goBranch(index, initialLocation: true);
-              sl.get<NavCubit>().setIndex(index);
-            },
-          ),
-        );
-      },
+    return Scaffold(
+      body: navigationShell,
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.archive), label: 'Archives'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+        currentIndex: navigationShell.currentIndex,
+        onTap: (index) {
+          navigationShell.goBranch(index, initialLocation: true);
+          // sl.get<NavCubit>().setIndex(index);
+        },
+      ),
     );
   }
 }

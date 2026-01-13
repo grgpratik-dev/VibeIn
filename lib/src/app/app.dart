@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vibein/src/app/route/app_router.dart';
 import 'package:vibein/src/app/theme/app_theme.dart';
 import 'package:vibein/src/core/constants/strings.dart';
-import 'package:vibein/src/features/shell/presentation/bloc/cubit/nav_cubit.dart';
+import 'package:vibein/src/features/shell/presentation/bloc/image_picker_cubit/image_picker_cubit.dart';
 
 import '../di/service_locator.dart';
 
@@ -13,7 +13,9 @@ class VibeInApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => sl.get<NavCubit>())],
+      providers: [
+        BlocProvider(create: (context) => sl.get<ImagePickerCubit>()),
+      ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: appName,

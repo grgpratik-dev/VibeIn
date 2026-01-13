@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
+import 'package:vibein/src/features/shell/presentation/bloc/image_picker_cubit/image_picker_cubit.dart';
 
-import '../features/shell/presentation/bloc/cubit/nav_cubit.dart';
+
 
 // Service locator instance globally accessible
 final sl = GetIt.instance;
@@ -11,5 +12,6 @@ void setupServiceLocator() {
 }
 
 void bloc() {
-  sl.registerLazySingleton(() => NavCubit());
+
+  sl.registerLazySingleton(() => ImagePickerCubit());
 }
